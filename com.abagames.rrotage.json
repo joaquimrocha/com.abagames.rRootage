@@ -4,6 +4,7 @@
   "runtime-version": "1.6",
   "sdk": "org.freedesktop.Sdk",
   "command": "rrootage",
+  "rename-desktop-file": "rrootage.desktop",
   "finish-args": [
     "--device=dri",
     "--socket=pulseaudio",
@@ -118,6 +119,16 @@
         {
           "type": "patch",
           "path": "patches/rrootage/11-Do-not-hardcode-the-assets-location.patch"
+        },
+        {
+          "type": "file",
+          "path": "rrootage.desktop"
+        },
+        {
+          "type": "shell",
+          "commands": [
+            "install -Dm644 rrootage.desktop /app/share/applications/rrootage.desktop"
+          ]
         }
       ],
       "build-commands": [
